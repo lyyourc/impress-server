@@ -1,8 +1,12 @@
 import koa from 'koa'
+import bodyParser from 'koa-bodyparser'
 
 import router from './router'
 
 const app = koa()
+
+// body parser
+app.use(bodyParser())
 
 // router
 app.use(router.routes(), router.allowedMethods)
