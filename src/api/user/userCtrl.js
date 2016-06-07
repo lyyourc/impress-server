@@ -5,10 +5,11 @@ import userModel from './userModel'
 const router = new Router()
 
 router
-  .get('/', function* () {
-    const users = yield userModel.getUsers()
-
-    this.body = users
-  })
+  .get('/', (ctx) =>
+    userModel.getUsers()
+      .then(user => {
+        ctx.body = user
+      })
+  )
 
 export default router

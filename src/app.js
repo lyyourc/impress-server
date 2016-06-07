@@ -1,9 +1,13 @@
-import koa from 'koa'
+import Koa from 'koa'
+import serve from 'koa-static'
 import bodyParser from 'koa-bodyparser'
 
 import router from './router'
 
-const app = koa()
+const app = new Koa()
+
+// static
+app.use(serve('./public'))
 
 // body parser
 app.use(bodyParser())
