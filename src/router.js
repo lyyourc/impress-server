@@ -1,9 +1,12 @@
-import koaRouter from 'koa-router'
+import Router from 'koa-router'
 
-const router = koaRouter()
+// import authCtrl from './api/auth/authCtrl'
+import userCtrl from './api/user/userCtrl'
 
-router.get('/', function* (next) {
-  this.body = 'Hello koa'
-})
 
-export default router
+const apiRouter = new Router({ prefix: '/api' })
+
+// apiRouter.use('/auth', authCtrl.routes())
+apiRouter.use('/user', userCtrl.routes())
+
+export default apiRouter

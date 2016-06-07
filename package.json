@@ -13,8 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.4.0",
     "koa": "^1.2.0",
-    "koa-router": "^5.4.0"
+    "koa-router": "^5.4.0",
+    "mysql2": "^1.0.0-rc.2"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
