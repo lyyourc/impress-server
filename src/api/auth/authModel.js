@@ -4,7 +4,7 @@ export default {
   signup (user) {
     return connection
       .queryAsync('INSERT INTO user SET ?', user)
-      .then(result => result.affectedRows)
+      .then(() => this.login(user))
   },
 
   login ({ username, password }) {

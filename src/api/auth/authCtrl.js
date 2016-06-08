@@ -9,7 +9,8 @@ router
     authModel.signup(ctx.request.body)
       .then(result => {
         ctx.body = {
-          success: result > 0,
+          success: !!result,
+          data: result,
         }
       })
   )
