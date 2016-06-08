@@ -33,4 +33,23 @@ router
       })
   )
 
+  .delete('/:id', ctx =>
+    photoModel.deletePhoto(ctx.params.id)
+      .then(result => {
+        ctx.body = { success: !!result }
+      })
+  )
+
+  .put('/:id', ctx => {
+    const { id } = ctx.params
+    const { name, description } = ctx.request.body
+
+    return photoModel.updatePhoto({ id, name, description })
+      .then(result => {
+        ctx.body = {
+          success: !!result,
+        }
+      })
+  })
+
 export default router
