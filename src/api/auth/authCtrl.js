@@ -17,6 +17,8 @@ router
   .post('/login', (ctx) =>
     authModel.login(ctx.request.body)
       .then(result => {
+        ctx.session.user = result
+
         ctx.body = {
           success: !!result,
           data: result,
