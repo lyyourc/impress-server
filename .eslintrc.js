@@ -1,6 +1,7 @@
 module.exports = {
   root: true,
   extends: 'airbnb-base',
+  "parser": "babel-eslint",
 
   // add your custom rules here
   'rules': {
